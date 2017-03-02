@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SSH in Emacs with TRAMP | Tâm Vũ Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="I use emacs a lot, sometimes I work on another machine though ssh to edit file. In emacs, you can use TRAMP to do EVERYTHING in remote machine.
+Syntax1C-x C-f /protocol:user@remote_address#port:/path/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSH in Emacs with TRAMP">
+<meta property="og:url" content="http://tamvublog.herokuapp.com/2016/11/10/SSH-in-Emacs-with-TRAMP-dired/index.html">
+<meta property="og:site_name" content="Tâm Vũ Blog">
+<meta property="og:description" content="I use emacs a lot, sometimes I work on another machine though ssh to edit file. In emacs, you can use TRAMP to do EVERYTHING in remote machine.
+Syntax1C-x C-f /protocol:user@remote_address#port:/path/">
+<meta property="og:image" content="http://tamvublog.herokuapp.com/content/images/2016/11/SSH-in-Emacs-with-TRAMP-dired-1.png">
+<meta property="og:updated_time" content="2016-11-10T09:43:56.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SSH in Emacs with TRAMP">
+<meta name="twitter:description" content="I use emacs a lot, sometimes I work on another machine though ssh to edit file. In emacs, you can use TRAMP to do EVERYTHING in remote machine.
+Syntax1C-x C-f /protocol:user@remote_address#port:/path/">
+<meta name="twitter:image" content="http://tamvublog.herokuapp.com/content/images/2016/11/SSH-in-Emacs-with-TRAMP-dired-1.png">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">Tâm Vũ Blog</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">Tâm Vũ Blog</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+          <a href="https://github.com/" class="github" target="_blank">
+            <i class="fa fa-github"></i>
+          </a>
+        
+          <a href="http://weibo.com/" class="weibo" target="_blank">
+            <i class="fa fa-weibo"></i>
+          </a>
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="https://www.google.com.vn/search?q=" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="tamvublog.herokuapp.com">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+    
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-SSH-in-Emacs-with-TRAMP-dired" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/10/SSH-in-Emacs-with-TRAMP-dired/" class="article-date">
+  <time datetime="2016-11-10T09:43:56.000Z" itemprop="datePublished">2016-11-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Emacs/">Emacs</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SSH in Emacs with TRAMP
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I use emacs a lot, sometimes I work on another machine though ssh to edit file. In emacs, you can use TRAMP to do <strong>EVERYTHING</strong> in remote machine.</p>
+<h4 id="Syntax"><a href="#Syntax" class="headerlink" title="Syntax"></a>Syntax</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">C-x C-f /protocol:user@remote_address#port:/path/to/file</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>protocol</strong> : ssh, scp, ftp and even <a href="https://github.com/emacs-pe/docker-tramp.el" target="_blank" rel="external">docker</a></li>
+<li><strong>user</strong> : username to remote in remote machine</li>
+<li><strong>remote_address</strong> : it can be ip address or domain name of remote address</li>
+<li><strong>port</strong> : port of protocol</li>
+</ul>
+<h4 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">C-x C-f /ssh:root@localhost:/home</div></pre></td></tr></table></figure>
+<p>When the connection is established, emacs will open a dired - emacs’s file manager for you to interact with remote machine. You can edit file and save, you can open terminal, you can copy file from local machine to remote machine and vice versa.</p>
+<p><img src="/content/images/2016/11/SSH-in-Emacs-with-TRAMP-dired-1.png" alt="TRAMP dired mode" title="tramp-dired"></p>
+<p>If you haven’t use this before, don’t worry, just remember some following keys to use:</p>
+<ul>
+<li><strong>enter</strong> or <strong>f</strong> : enter directory or open file</li>
+<li><strong>D</strong> : delete</li>
+<li><strong>C</strong> : copy</li>
+<li><strong>R</strong> : move</li>
+<li><strong>d</strong> : change state to delete</li>
+<li><strong>m</strong> : mark</li>
+<li><strong>u</strong> : unmark</li>
+<li><strong>U</strong> : unmark all</li>
+<li><strong>x</strong> : execute </li>
+<li><strong>^</strong> : back to parent directory</li>
+</ul>
+<p>To open terminal, just call “shell” command<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">M-x shell</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://tamvublog.herokuapp.com/2016/11/10/SSH-in-Emacs-with-TRAMP-dired/" data-id="cizsptg940002kaqtdzysfv7g" class="article-share-link">Share</a>
+      
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/11/10/Running-kali-linux-on-any-linux-device-using-docker/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Running kali linux on any linux distro using docker
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/09/About-Me/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">About me</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Tâm Vũ<br>
+      <!-- Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> -->
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Running kali linux on any linux distro using docker | Tâm Vũ Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Installing dockerYou can follow this link to install docker on your machine
+Install kali in dockerRun this command to pull kali images
+1docker pull kalilinux/kali-linux-docker
+Run this command
+1docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Running kali linux on any linux distro using docker">
+<meta property="og:url" content="http://tamvublog.herokuapp.com/2016/11/10/Running-kali-linux-on-any-linux-device-using-docker/index.html">
+<meta property="og:site_name" content="Tâm Vũ Blog">
+<meta property="og:description" content="Installing dockerYou can follow this link to install docker on your machine
+Install kali in dockerRun this command to pull kali images
+1docker pull kalilinux/kali-linux-docker
+Run this command
+1docker">
+<meta property="og:updated_time" content="2017-01-15T04:08:57.128Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Running kali linux on any linux distro using docker">
+<meta name="twitter:description" content="Installing dockerYou can follow this link to install docker on your machine
+Install kali in dockerRun this command to pull kali images
+1docker pull kalilinux/kali-linux-docker
+Run this command
+1docker">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/scrollUp/image.css">
+  <!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.min.js"></script><![endif]-->
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <div class="logo">
+        <img src="/logo.png" alt="Profile Picture">
+      </div>
+      <div id="title">Tâm Vũ Blog</div>
+      
+       <ul class="my-socials">
+  
+ 
+</ul>
+    </div>
+  </div>
+  <div id="header-inner" class="">
+    <nav id="main-nav">
+      <a id="main-nav-toggle" class="nav-icon"></a>
+      <!--
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      -->
+    </nav>
+    <nav id="title-nav" style="display:none">
+      <a href="/">Tâm Vũ Blog</a>
+      <img src="/logo.png" alt="Profile Picture">
+      <!--
+      <span id="title-nav-socials">
+        
+          <a href="https://github.com/" class="github" target="_blank">
+            <i class="fa fa-github"></i>
+          </a>
+        
+          <a href="http://weibo.com/" class="weibo" target="_blank">
+            <i class="fa fa-weibo"></i>
+          </a>
+        
+       
+     </span>
+      -->
+    </nav>
+    <nav id="sub-nav">
+      
+      <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+    </nav>
+    <div id="search-form-wrap">
+      <form action="https://www.google.com.vn/search?q=" method="get" accept-charset="utf-8" class="search-form">
+        <input type="search" name="word" maxlength="20" class="search-form-input" placeholder="Search">
+        <input type="submit" value="" class="search-form-submit">
+        <input name=tn type=hidden value="bds">
+        <input name=cl type=hidden value="3">
+        <input name=ct type=hidden value="2097152">
+        <input type="hidden" name="si" value="tamvublog.herokuapp.com">
+      </form>
+    </div>
+  </div>
+  <div class="site-nav" style="display: none;">
+    <ul>
+    
+        <li><a href="/">Home</a></li>
+      
+        <li><a href="/archives">Archives</a></li>
+      
+    </ul>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Running-kali-linux-on-any-linux-device-using-docker" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/11/10/Running-kali-linux-on-any-linux-device-using-docker/" class="article-date">
+  <time datetime="2016-11-10T15:49:31.000Z" itemprop="datePublished">2016-11-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Docker/">Docker</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Running kali linux on any linux distro using docker
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Installing-docker"><a href="#Installing-docker" class="headerlink" title="Installing docker"></a>Installing docker</h4><p>You can follow this <a href="https://docs.docker.com/engine/installation/" target="_blank" rel="external">link</a> to install docker on your machine</p>
+<h4 id="Install-kali-in-docker"><a href="#Install-kali-in-docker" class="headerlink" title="Install kali in docker"></a>Install kali in docker</h4><p>Run this command to pull kali images</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker pull kalilinux/kali-linux-docker</div></pre></td></tr></table></figure>
+<p>Run this command</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker run -Pti --privileged -e DISPLAY=:1.0 --device /dev/snd -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/vuquangtam/Docker/Share:/share --net=host --name kali kalilinux/kali-linux-docker</div></pre></td></tr></table></figure>
+<p>to create a new container. It will return a shell to interact with. By default, there are no tools added to this image, so we must install additional toolpack, you can follow this <a href="https://www.kali.org/news/kali-linux-metapackages/" target="_blank" rel="external">link</a> to choose your suitable one.</p>
+<p>After create container. you can check containter id by run this command</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker ps -a</div></pre></td></tr></table></figure>
+<p>To start a container, run</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">docker start [container&apos;s id]</div></pre></td></tr></table></figure>
+<h4 id="Adding-GUI"><a href="#Adding-GUI" class="headerlink" title="Adding GUI"></a>Adding GUI</h4><p>You can install any desktop environment that kali support. In my case, i’ll install XFCE because it’s lightweight. Run this command to install XFCE in your docker container</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install kali-defaults kali-root-login desktop-base xfce4 xfce4-places-plugin xfce4-goodies</div></pre></td></tr></table></figure>
+<h4 id="Run-Docker-GUI-in-new-xsession"><a href="#Run-Docker-GUI-in-new-xsession" class="headerlink" title="Run Docker GUI in new xsession"></a>Run Docker GUI in new xsession</h4><p>If you want to run in new window in current xsession. you need to install Xephyr<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get install xserver-xephyr</div></pre></td></tr></table></figure></p>
+<p>I wrote a small script to run. You just need to copy it to /usr/bin for convenient. The script need a root priviledge to stop process.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line"></div><div class="line">container=<span class="string">"kali"</span></div><div class="line"></div><div class="line"><span class="function"><span class="title">init_desktop</span></span> () &#123;</div><div class="line">    <span class="keyword">if</span> [[ <span class="variable">$1</span> = <span class="string">"window"</span> ]]; <span class="keyword">then</span></div><div class="line">        nohup Xephyr -ac -br -noreset -screen 1280x600 -resizeable :1 &amp;&gt; /dev/null &amp; </div><div class="line">        sleep 1</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="keyword">if</span> [ ! <span class="_">-f</span> /tmp/.X1-lock ]; <span class="keyword">then</span></div><div class="line">            nohup xinit  -- :1 vt9 &amp;&gt; /dev/null &amp;</div><div class="line">            sleep 4</div><div class="line">        <span class="keyword">fi</span></div><div class="line">    <span class="keyword">fi</span></div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="title">stop_desktop</span></span> () &#123;</div><div class="line">        nohup <span class="built_in">kill</span> $(pgrep xinit) &amp;&gt; /dev/null</div><div class="line">        nohup <span class="built_in">kill</span> $(pgrep Xephyr) &amp;&gt; /dev/null</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">case</span> <span class="string">"<span class="variable">$1</span>"</span> <span class="keyword">in</span></div><div class="line">    <span class="string">"start"</span>)</div><div class="line">        <span class="built_in">echo</span> <span class="string">"Starting..."</span></div><div class="line">        init_desktop <span class="variable">$2</span></div><div class="line">        nohup docker start <span class="variable">$container</span> &amp;&gt; /dev/null</div><div class="line">        docker <span class="built_in">exec</span> -it <span class="_">-d</span> --privileged kali x-session-manager</div><div class="line">        ;;</div><div class="line">    <span class="string">"run"</span>)</div><div class="line">        <span class="built_in">echo</span> <span class="string">"Running <span class="variable">$2</span>..."</span></div><div class="line">        xhost + &amp;&gt; /dev/null</div><div class="line">        docker run -ti --rm --privileged --device /dev/snd <span class="_">-e</span> DISPLAY=<span class="variable">$DISPLAY</span> -v /tmp/.X11-unix:/tmp/.X11-unix -v /home/vuquangtam/Docker/Share:/share -p 8080:8080 --net=host vuquangtam/kali <span class="variable">$2</span></div><div class="line">	;;</div><div class="line">    <span class="string">"shell"</span>)</div><div class="line">        nohup docker start <span class="variable">$container</span> &amp;&gt; /dev/null</div><div class="line">        docker <span class="built_in">exec</span> -it --privileged kali bash</div><div class="line">	;;</div><div class="line">    <span class="string">"stop"</span>)</div><div class="line">        <span class="built_in">echo</span> <span class="string">"Stopping..."</span></div><div class="line">        nohup docker stop <span class="variable">$container</span> &amp;&gt; /dev/null</div><div class="line">        stop_desktop</div><div class="line">        ;;</div><div class="line">    <span class="string">"restart"</span>)</div><div class="line">        <span class="built_in">echo</span> <span class="string">"Restarting..."</span></div><div class="line">        nohup docker restart <span class="variable">$container</span> &amp;&gt; /dev/null</div><div class="line">        docker <span class="built_in">exec</span> -it <span class="_">-d</span> --privileged kali x-session-manager</div><div class="line">        ;;</div><div class="line">    <span class="string">"pause"</span>)</div><div class="line">        <span class="built_in">echo</span> <span class="string">"Pausing..."</span></div><div class="line">        nohup docker pause <span class="variable">$container</span> &amp;&gt; /dev/null</div><div class="line">        stop_desktop</div><div class="line">        ;;</div><div class="line">    <span class="string">"resume"</span> | <span class="string">"unpause"</span>)</div><div class="line">        <span class="built_in">echo</span> <span class="string">"Resuming..."</span></div><div class="line">        init_desktop <span class="variable">$2</span></div><div class="line">        nohup docker unpause <span class="variable">$container</span> &amp;&gt; /dev/null</div><div class="line">        ;;</div><div class="line">    *)       </div><div class="line">        ;;</div><div class="line"><span class="keyword">esac</span></div></pre></td></tr></table></figure>
+<p>Some examples:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">sudo nameOfScript start window # to run a new window in current xsession</div><div class="line">sudo nameOfScript start # to start new session in vt9 (press Ctrl+Alt+F9 to switch in Ubuntu/Linux Mint)</div><div class="line">sudo nameOfScript stop</div><div class="line">sudo nameOfScript restart</div><div class="line">sudo nameOfScript run wireshark</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      
+        <a data-url="http://tamvublog.herokuapp.com/2016/11/10/Running-kali-linux-on-any-linux-device-using-docker/" data-id="cizsptg900001kaqtocs6y2nb" class="article-share-link">Share</a>
+      
+
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/10/SSH-in-Emacs-with-TRAMP-dired/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">SSH in Emacs with TRAMP</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Tâm Vũ<br>
+      <!-- Theme <a href="https://github.com/henryhuang/oishi" target="_blank">Oishi</a>, Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> -->
+    </div>
+  </div>
+</footer>
+    </div>
+    <!--
+      <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    -->
+    
+
+<!-- 百度分享 start -->
+
+<!-- 百度分享 end -->
+
+<script src="//cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+
+
+<script src="/js/jquery.scrollUp.min.js"></script>
+<script src="/js/jquery.transform.js"></script>
+<script src="/js/menu.js"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/scrollUp.js"></script>
+
+  </div>
+</body>
+</html>
